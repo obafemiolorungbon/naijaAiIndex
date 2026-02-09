@@ -1,0 +1,27 @@
+name: LagosAI Health
+tagline: AI diagnostics platform for tropical diseases in Sub-Saharan Africa
+description: >
+  LagosAI Health uses computer vision and machine learning to assist
+  healthcare workers in diagnosing tropical diseases common in Sub-Saharan
+  Africa. The platform works offline on low-bandwidth connections and
+  supports multiple Nigerian languages for patient intake.
+repo: https://github.com/lagosai-health/platform
+categories:
+  - health
+  - research
+tags:
+  - diagnostics
+  - computer-vision
+  - healthcare
+  - offline-first
+team:
+  - name: Ada Okonkwo
+    role: Founder & CEO
+    links:
+      github: https://github.com/adaokonkwo
+origin:
+  nigerian: true
+  based_in: Lagos
+status: active
+year_started: 2022
+last_updated: "2026-01-15"

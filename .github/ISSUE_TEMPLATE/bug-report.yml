@@ -1,0 +1,45 @@
+name: Bug Report
+description: Report a bug in the website, validation, or build system
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear description of what the bug is
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior
+      value: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Relevant environment details
+      value: |
+        - OS: [e.g. macOS 14, Windows 11, Ubuntu 22]
+        - Node version: [e.g. 20.10]
+        - pnpm version: [e.g. 9.15]
+        - Browser (if applicable): [e.g. Chrome 120]
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any additional context, screenshots, or error logs

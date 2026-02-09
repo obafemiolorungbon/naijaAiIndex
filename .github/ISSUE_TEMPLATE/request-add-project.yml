@@ -1,0 +1,75 @@
+name: "Request: Add Project"
+description: Request a new project to be added to the Naija AI Index
+title: "[Project] "
+labels: ["new-project"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a project! The preferred way to add a project is by
+        [opening a Pull Request](../blob/main/CONTRIBUTING.md). Use this form if you'd
+        like to request someone else add it.
+  - type: input
+    id: name
+    attributes:
+      label: Project Name
+      placeholder: e.g. My AI Tool
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What does this project do?
+      placeholder: A brief description of the project and its AI/ML component
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website URL
+      placeholder: https://example.com
+  - type: input
+    id: repo
+    attributes:
+      label: Repository URL
+      placeholder: https://github.com/org/repo
+  - type: dropdown
+    id: categories
+    attributes:
+      label: Primary Category
+      options:
+        - llm-apps
+        - agents
+        - developer-tools
+        - infra
+        - datasets
+        - research
+        - health
+        - fintech
+        - education
+        - agriculture
+        - climate
+        - govtech
+        - security
+        - media
+    validations:
+      required: true
+  - type: textarea
+    id: nigerian-connection
+    attributes:
+      label: Nigerian Connection
+      description: How is this project connected to Nigeria? (e.g., founded by Nigerians, team based in Nigeria)
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmation
+      options:
+        - label: This project is built by Nigerians or has significant Nigerian involvement
+          required: true
+        - label: This project has a meaningful AI/ML component
+          required: true
+        - label: I have read the [Code of Conduct](../blob/main/CODE_OF_CONDUCT.md)
+          required: true

@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Type check
+        run: pnpm typecheck
+
+      - name: Validate data
+        run: pnpm validate:data
+
+      - name: Generate README
+        run: pnpm generate:readme
+
+      - name: Check README is up to date
+        run: |
+          git diff --exit-code README.md || \
+          (echo "::error::README is out of date. Run 'pnpm generate:readme' and commit the changes." && exit 1)
+
+      - name: Generate site data
+        run: pnpm generate:data
+
+      - name: Build website
+        run: pnpm --filter @naija-ai-index/web build

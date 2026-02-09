@@ -1,0 +1,24 @@
+name: Sample LLM App
+tagline: An example LLM application entry for reference
+description: >
+  This is a sample entry demonstrating the required format for adding an
+  LLM-based application to the Naija AI Index. Copy this file to
+  data/projects/ and replace all fields with your actual project data.
+website: https://example.com
+repo: https://github.com/example/sample-llm-app
+categories:
+  - llm-apps
+tags:
+  - sample
+  - template
+team:
+  - name: Sample Author
+    role: Maintainer
+    links:
+      github: https://github.com/example
+origin:
+  nigerian: true
+  based_in: Lagos
+status: active
+year_started: 2024
+last_updated: "2026-01-01"

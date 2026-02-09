@@ -1,0 +1,70 @@
+.page {
+  padding: 3rem 0 4rem;
+  max-width: 720px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.stepList {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.stepList strong {
+  color: var(--text-primary);
+}
+
+.code {
+  font-size: 0.8125rem;
+  line-height: 1.8;
+}
+
+.ruleList {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.categoryGrid {
+  display: flex;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+}
+
+.categoryTag {
+  font-size: 0.8125rem;
+  font-family: var(--font-mono);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}

@@ -1,0 +1,33 @@
+name: Naija NLP
+tagline: Open-source NLP toolkit for Nigerian languages
+description: >
+  Naija NLP provides natural language processing tools specifically designed
+  for Nigerian languages including Yoruba, Igbo, Hausa, and Pidgin English.
+  The toolkit includes tokenizers, sentiment analysis, named entity
+  recognition, and pre-trained language models.
+repo: https://github.com/naija-nlp/toolkit
+docs: https://docs.naijanlp.dev
+categories:
+  - developer-tools
+  - datasets
+  - research
+tags:
+  - nlp
+  - nigerian-languages
+  - open-source
+  - machine-learning
+  - yoruba
+  - igbo
+  - hausa
+team:
+  - name: Chidi Eze
+    role: Lead Maintainer
+    links:
+      github: https://github.com/chidieze
+      twitter: https://twitter.com/chidieze
+origin:
+  nigerian: true
+  based_in: Remote
+status: active
+year_started: 2021
+last_updated: "2026-02-05"

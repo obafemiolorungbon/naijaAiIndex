@@ -1,0 +1,30 @@
+name: FinBot NG
+tagline: Conversational AI assistant for personal finance in Nigeria
+description: >
+  FinBot NG is an AI-powered financial assistant that helps Nigerians manage
+  personal finances, understand investment options, and navigate the local
+  financial landscape through natural language conversations. Supports
+  WhatsApp and web interfaces.
+website: https://finbot.ng
+demo: https://demo.finbot.ng
+categories:
+  - fintech
+  - agents
+tags:
+  - chatbot
+  - personal-finance
+  - whatsapp
+  - conversational-ai
+team:
+  - name: Amina Yusuf
+    role: CEO
+    links:
+      linkedin: https://linkedin.com/in/aminayusuf
+  - name: Tunde Bakare
+    role: CTO
+origin:
+  nigerian: true
+  based_in: Lagos
+status: active
+year_started: 2024
+last_updated: "2026-01-10"

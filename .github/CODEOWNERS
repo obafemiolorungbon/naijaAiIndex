@@ -1,0 +1,9 @@
+# Data and schema files require maintainer review
+/data/ @naija-ai-index/maintainers
+/schemas/ @naija-ai-index/maintainers
+
+# CI and GitHub config require maintainer review
+/.github/ @naija-ai-index/maintainers
+
+# Scripts require maintainer review
+/scripts/ @naija-ai-index/maintainers

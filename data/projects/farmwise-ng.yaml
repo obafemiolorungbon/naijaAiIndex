@@ -1,0 +1,29 @@
+name: FarmWise NG
+tagline: AI-powered crop monitoring and advisory for Nigerian farmers
+description: >
+  FarmWise NG combines satellite imagery analysis with machine learning to
+  provide Nigerian farmers with real-time crop health monitoring, pest
+  detection, and yield optimization recommendations. The mobile app works
+  with low-bandwidth connections common in rural areas.
+website: https://farmwise.ng
+repo: https://github.com/farmwise-ng/platform
+categories:
+  - agriculture
+  - climate
+tags:
+  - agriculture
+  - satellite-imagery
+  - mobile
+  - rural-tech
+team:
+  - name: Emeka Obi
+    role: Founder
+    links:
+      github: https://github.com/emekaobi
+      twitter: https://twitter.com/emekaobi
+origin:
+  nigerian: true
+  based_in: Ibadan
+status: active
+year_started: 2023
+last_updated: "2026-02-01"

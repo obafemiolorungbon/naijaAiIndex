@@ -1,0 +1,27 @@
+name: EduSpark AI
+tagline: Personalized AI learning platform for African students
+description: >
+  EduSpark AI delivers personalized learning experiences powered by large
+  language models. The platform adapts to individual student needs, supports
+  curriculum-aligned content for Nigerian schools, and provides AI tutoring
+  in multiple Nigerian languages.
+website: https://eduspark.ai
+categories:
+  - education
+  - llm-apps
+tags:
+  - education
+  - personalized-learning
+  - nlp
+  - tutoring
+team:
+  - name: Ngozi Ibe
+    role: Founder & CTO
+    links:
+      github: https://github.com/ngoziibe
+origin:
+  nigerian: true
+  based_in: Abuja
+status: active
+year_started: 2023
+last_updated: "2026-01-20"

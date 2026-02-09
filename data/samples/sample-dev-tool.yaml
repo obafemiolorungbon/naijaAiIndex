@@ -1,0 +1,24 @@
+name: Sample Dev Tool
+tagline: An example developer tool entry for reference
+description: >
+  This is a sample entry demonstrating the required format for adding a
+  developer tool to the Naija AI Index. Copy this file to data/projects/
+  and replace all fields with your actual project data.
+repo: https://github.com/example/sample-dev-tool
+docs: https://example.com/docs
+categories:
+  - developer-tools
+tags:
+  - sample
+  - template
+team:
+  - name: Sample Developer
+    role: Lead Developer
+    links:
+      github: https://github.com/example
+origin:
+  nigerian: true
+  based_in: Remote
+status: active
+year_started: 2024
+last_updated: "2026-01-01"

@@ -1,0 +1,166 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Naija AI Index Project",
+  "description": "Schema for a project entry in the Naija AI Index directory",
+  "type": "object",
+  "required": [
+    "name",
+    "tagline",
+    "description",
+    "categories",
+    "origin",
+    "status",
+    "last_updated"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tagline": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600
+    },
+    "website": {
+      "type": "string",
+      "format": "uri"
+    },
+    "demo": {
+      "type": "string",
+      "format": "uri"
+    },
+    "repo": {
+      "type": "string",
+      "format": "uri"
+    },
+    "docs": {
+      "type": "string",
+      "format": "uri"
+    },
+    "logo": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "llm-apps",
+          "agents",
+          "developer-tools",
+          "infra",
+          "datasets",
+          "research",
+          "health",
+          "fintech",
+          "education",
+          "agriculture",
+          "climate",
+          "govtech",
+          "security",
+          "media"
+        ]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "string"
+      }
+    },
+    "team": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "links": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "twitter": {
+                "type": "string",
+                "format": "uri"
+              },
+              "linkedin": {
+                "type": "string",
+                "format": "uri"
+              },
+              "github": {
+                "type": "string",
+                "format": "uri"
+              },
+              "website": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      }
+    },
+    "origin": {
+      "type": "object",
+      "required": ["nigerian"],
+      "additionalProperties": false,
+      "properties": {
+        "nigerian": {
+          "type": "boolean",
+          "const": true
+        },
+        "based_in": {
+          "type": "string"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "paused", "archived"]
+    },
+    "year_started": {
+      "type": "number",
+      "minimum": 2010,
+      "maximum": 2026
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "deployment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "railway": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "template_url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "project_url": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      }
+    }
+  }
+}

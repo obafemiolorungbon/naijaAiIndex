@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "tsc --noEmit -p scripts/tsconfig.json && tsc -b apps/web",
+    "typecheck": "pnpm generate:data && tsc --noEmit -p scripts/tsconfig.json && tsc -b apps/web",
     "build": "pnpm generate:data && pnpm --filter @naija-ai-index/web build",
     "test": "pnpm validate:data",
     "dev": "pnpm generate:data && pnpm --filter @naija-ai-index/web dev"

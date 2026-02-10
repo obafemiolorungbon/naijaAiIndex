@@ -25,14 +25,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Validate data
+        run: pnpm validate:data
+
+      - name: Generate site data
+        run: pnpm generate:data
+
       - name: Lint
         run: pnpm lint
 
       - name: Type check
         run: pnpm typecheck
-
-      - name: Validate data
-        run: pnpm validate:data
 
       - name: Generate README
         run: pnpm generate:readme
@@ -41,9 +44,6 @@ jobs:
         run: |
           git diff --exit-code README.md || \
           (echo "::error::README is out of date. Run 'pnpm generate:readme' and commit the changes." && exit 1)
-
-      - name: Generate site data
-        run: pnpm generate:data
 
       - name: Build website
         run: pnpm --filter @naija-ai-index/web build

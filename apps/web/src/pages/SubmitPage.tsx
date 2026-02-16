@@ -39,7 +39,7 @@ const SubmitPage = () => {
           <li>
             <strong>Fork</strong> the{" "}
             <a
-              href="https://github.com/naija-ai-index/naija-ai-index"
+              href="https://github.com/obafemiolorungbon/naijaAiIndex"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -1,3 +1,5 @@
+import { Seo } from "../seo/Seo";
+import { getAbsoluteUrl } from "../seo/site";
 import styles from "./SubmitPage.module.css";
 
 const TEMPLATE = `name: Your Project Name
@@ -27,6 +29,7 @@ last_updated: "2026-02-09"`;
 const STEPS = [
   {
     title: "Fork the repository",
+    seoText: "Fork the naijaAiIndex repository to your own GitHub account.",
     body: (
       <>
         Fork the{" "}
@@ -43,6 +46,7 @@ const STEPS = [
   },
   {
     title: "Create a project file",
+    seoText: "Add a new YAML file at data/projects/your-project-name.yaml.",
     body: (
       <>
         Add a new YAML file at <code>data/projects/your-project-name.yaml</code>
@@ -52,10 +56,12 @@ const STEPS = [
   },
   {
     title: "Fill out the template",
+    seoText: "Copy the template and fill all required fields accurately.",
     body: "Use the template below and complete the required fields accurately.",
   },
   {
     title: "Validate your entry",
+    seoText: "Run pnpm validate:data to ensure your file passes schema checks.",
     body: (
       <>
         Run <code>pnpm validate:data</code> to ensure your file passes schema
@@ -65,6 +71,7 @@ const STEPS = [
   },
   {
     title: "Regenerate generated outputs",
+    seoText: "Run pnpm generate:readme and pnpm generate:data.",
     body: (
       <>
         Run <code>pnpm generate:readme</code> and{" "}
@@ -74,9 +81,33 @@ const STEPS = [
   },
   {
     title: "Open a pull request",
+    seoText: "Submit a pull request with a clear title and short description.",
     body: "Submit a PR with a clear title and short description of your project.",
   },
 ];
+
+const SUBMIT_META_DESCRIPTION =
+  "Learn how to submit your Nigerian AI project to Naija AI Index with schema-validated YAML and a clean pull request workflow.";
+const SUBMIT_KEYWORDS = [
+  "submit Nigerian AI project",
+  "Naija AI Index contribution",
+  "open source AI directory",
+  "AI project listing guide",
+];
+const SUBMIT_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to submit a Nigerian AI project to Naija AI Index",
+  description: SUBMIT_META_DESCRIPTION,
+  url: getAbsoluteUrl("/submit"),
+  step: STEPS.map((step, index) => ({
+    "@type": "HowToStep",
+    position: index + 1,
+    name: step.title,
+    text: step.seoText,
+    url: `${getAbsoluteUrl("/submit")}#step-${index + 1}`,
+  })),
+};
 
 const REQUIREMENTS = [
   "Project must be built by Nigerians.",
@@ -118,115 +149,129 @@ const CATEGORIES = [
 
 const SubmitPage = () => {
   return (
-    <div className={styles.page}>
-      <section className={styles.hero}>
-        <p className={styles.eyebrow}>Community Contribution Guide</p>
-        <h1 className={styles.title}>Submit a Project</h1>
-        <p className={styles.subtitle}>
-          Add a Nigerian AI project to the index through a pull request. The
-          process is fast, schema-validated, and fully open source.
-        </p>
-        <div className={styles.heroActions}>
-          <a
-            className={styles.primaryAction}
-            href="https://github.com/obafemiolorungbon/naijaAiIndex"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open Repository
-          </a>
-          <a
-            className={styles.secondaryAction}
-            href="https://github.com/obafemiolorungbon/naijaAiIndex/blob/main/CONTRIBUTING.md"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read CONTRIBUTING.md
-          </a>
-        </div>
-        <ul className={styles.factGrid}>
-          <li className={styles.factCard}>
-            <span className={styles.factLabel}>Entry Type</span>
-            <strong className={styles.factValue}>YAML + PR</strong>
-          </li>
-          <li className={styles.factCard}>
-            <span className={styles.factLabel}>Validation</span>
-            <strong className={styles.factValue}>Schema Checked</strong>
-          </li>
-          <li className={styles.factCard}>
-            <span className={styles.factLabel}>Ownership</span>
-            <strong className={styles.factValue}>Nigerian-Built AI</strong>
-          </li>
-        </ul>
-      </section>
+    <>
+      <Seo
+        title="Submit a Nigerian AI Project"
+        description={SUBMIT_META_DESCRIPTION}
+        path="/submit"
+        keywords={SUBMIT_KEYWORDS}
+        jsonLd={SUBMIT_STRUCTURED_DATA}
+      />
 
-      <section className={styles.layoutGrid}>
-        <article className={styles.panel}>
-          <h2 className={styles.sectionTitle}>How to Add a Project</h2>
-          <ol className={styles.stepList}>
-            {STEPS.map((step, index) => (
-              <li key={step.title} className={styles.stepItem}>
-                <span className={styles.stepIndex}>
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div className={styles.stepContent}>
-                  <h3>{step.title}</h3>
-                  <p>{step.body}</p>
-                </div>
-              </li>
+      <div className={styles.page}>
+        <section className={styles.hero}>
+          <p className={styles.eyebrow}>Community Contribution Guide</p>
+          <h1 className={styles.title}>Submit a Project</h1>
+          <p className={styles.subtitle}>
+            Add a Nigerian AI project to the index through a pull request. The
+            process is fast, schema-validated, and fully open source.
+          </p>
+          <div className={styles.heroActions}>
+            <a
+              className={styles.primaryAction}
+              href="https://github.com/obafemiolorungbon/naijaAiIndex"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Repository
+            </a>
+            <a
+              className={styles.secondaryAction}
+              href="https://github.com/obafemiolorungbon/naijaAiIndex/blob/main/CONTRIBUTING.md"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read CONTRIBUTING.md
+            </a>
+          </div>
+          <ul className={styles.factGrid}>
+            <li className={styles.factCard}>
+              <span className={styles.factLabel}>Entry Type</span>
+              <strong className={styles.factValue}>YAML + PR</strong>
+            </li>
+            <li className={styles.factCard}>
+              <span className={styles.factLabel}>Validation</span>
+              <strong className={styles.factValue}>Schema Checked</strong>
+            </li>
+            <li className={styles.factCard}>
+              <span className={styles.factLabel}>Ownership</span>
+              <strong className={styles.factValue}>Nigerian-Built AI</strong>
+            </li>
+          </ul>
+        </section>
+
+        <section className={styles.layoutGrid}>
+          <article className={styles.panel}>
+            <h2 className={styles.sectionTitle}>How to Add a Project</h2>
+            <ol className={styles.stepList}>
+              {STEPS.map((step, index) => (
+                <li
+                  key={step.title}
+                  id={`step-${index + 1}`}
+                  className={styles.stepItem}
+                >
+                  <span className={styles.stepIndex}>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className={styles.stepContent}>
+                    <h3>{step.title}</h3>
+                    <p>{step.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </article>
+
+          <div className={styles.sidePanels}>
+            <article className={styles.panel}>
+              <h2 className={styles.sectionTitle}>Requirements</h2>
+              <ul className={styles.checkList}>
+                {REQUIREMENTS.map((rule) => (
+                  <li key={rule} className={styles.checkItem}>
+                    <span className={styles.checkDot} aria-hidden="true" />
+                    <span>{rule}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            <article className={styles.panel}>
+              <h2 className={styles.sectionTitle}>Pre-PR Checklist</h2>
+              <ul className={styles.checkList}>
+                {PRE_PR_CHECKS.map((item, index) => (
+                  <li key={index} className={styles.checkItem}>
+                    <span className={styles.checkDot} aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section className={`${styles.panel} ${styles.templatePanel}`}>
+          <div className={styles.panelHeader}>
+            <h2 className={styles.sectionTitle}>Project Template</h2>
+            <span className={styles.panelHint}>Copy and customize</span>
+          </div>
+          <pre className={styles.code}>{TEMPLATE}</pre>
+        </section>
+
+        <section className={`${styles.panel} ${styles.categoryPanel}`}>
+          <div className={styles.panelHeader}>
+            <h2 className={styles.sectionTitle}>Allowed Categories</h2>
+            <span className={styles.panelHint}>Use exact values</span>
+          </div>
+          <div className={styles.categoryGrid}>
+            {CATEGORIES.map((cat) => (
+              <span key={cat} className={styles.categoryTag}>
+                {cat}
+              </span>
             ))}
-          </ol>
-        </article>
-
-        <div className={styles.sidePanels}>
-          <article className={styles.panel}>
-            <h2 className={styles.sectionTitle}>Requirements</h2>
-            <ul className={styles.checkList}>
-              {REQUIREMENTS.map((rule) => (
-                <li key={rule} className={styles.checkItem}>
-                  <span className={styles.checkDot} aria-hidden="true" />
-                  <span>{rule}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <article className={styles.panel}>
-            <h2 className={styles.sectionTitle}>Pre-PR Checklist</h2>
-            <ul className={styles.checkList}>
-              {PRE_PR_CHECKS.map((item, index) => (
-                <li key={index} className={styles.checkItem}>
-                  <span className={styles.checkDot} aria-hidden="true" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section className={`${styles.panel} ${styles.templatePanel}`}>
-        <div className={styles.panelHeader}>
-          <h2 className={styles.sectionTitle}>Project Template</h2>
-          <span className={styles.panelHint}>Copy and customize</span>
-        </div>
-        <pre className={styles.code}>{TEMPLATE}</pre>
-      </section>
-
-      <section className={`${styles.panel} ${styles.categoryPanel}`}>
-        <div className={styles.panelHeader}>
-          <h2 className={styles.sectionTitle}>Allowed Categories</h2>
-          <span className={styles.panelHint}>Use exact values</span>
-        </div>
-        <div className={styles.categoryGrid}>
-          {CATEGORIES.map((cat) => (
-            <span key={cat} className={styles.categoryTag}>
-              {cat}
-            </span>
-          ))}
-        </div>
-      </section>
-    </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 

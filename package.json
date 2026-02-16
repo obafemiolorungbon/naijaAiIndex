@@ -7,7 +7,8 @@
   "scripts": {
     "validate:data": "tsx scripts/src/validate.ts",
     "generate:readme": "tsx scripts/src/generate-readme.ts",
-    "generate:data": "tsx scripts/src/generate-data.ts",
+    "generate:seo": "tsx scripts/src/generate-seo.ts",
+    "generate:data": "tsx scripts/src/generate-data.ts && pnpm generate:seo",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

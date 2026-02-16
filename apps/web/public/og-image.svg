@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Naija AI Index social card">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030303" />
+      <stop offset="55%" stop-color="#0b0b0b" />
+      <stop offset="100%" stop-color="#151515" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d788" />
+      <stop offset="100%" stop-color="#00a86b" />
+    </linearGradient>
+    <style>
+      .eyebrow { font: 600 28px "Inter", "Segoe UI", sans-serif; letter-spacing: 0.18em; text-transform: uppercase; fill: #9ca3af; }
+      .title { font: 800 82px "Inter", "Segoe UI", sans-serif; fill: #f5f5f5; }
+      .subtitle { font: 500 36px "Inter", "Segoe UI", sans-serif; fill: #d4d4d4; }
+      .chip { font: 600 28px "Inter", "Segoe UI", sans-serif; fill: #0c271b; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1040" cy="140" r="220" fill="#0a0a0a" />
+  <circle cx="1090" cy="580" r="190" fill="#0d0d0d" />
+  <circle cx="930" cy="470" r="120" fill="#0f0f0f" />
+
+  <rect x="84" y="72" width="290" height="60" rx="30" fill="url(#accent)" />
+  <text x="122" y="112" class="chip">Nigerian AI</text>
+
+  <text x="84" y="220" class="title">Naija AI Index</text>
+  <text x="84" y="300" class="subtitle">Open directory of Nigerians building in AI</text>
+
+  <g transform="translate(84 378)">
+    <rect width="1028" height="172" rx="24" fill="#0c0c0c" stroke="#1f2937" />
+    <text x="48" y="78" class="eyebrow">Discover startups, tools, datasets, and research</text>
+    <text x="48" y="128" class="subtitle">Community-maintained. Open source. Schema-validated.</text>
+  </g>
+</svg>
